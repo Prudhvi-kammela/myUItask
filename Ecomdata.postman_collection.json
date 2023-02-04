@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "9f21f77f-407a-45b0-bf1b-2cb82b23410b",
+		"name": "Ecomdata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/products/63dc6a1babe4ed51fb4f4e00",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"63dc6a1babe4ed51fb4f4e00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Canon Cam 5D\",\r\n        \"image\":\"https://demo.opencart.com/image/cache/catalog/demo/canon_eos_5d_1-200x200.jpg\",\r\n        \"description\":\"Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we'r..\",\r\n        \"price\":20999,\r\n        \"prePrice\":24999,\r\n        \"discount\":\"INR 1000 OFF on All bank cards\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dataupdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"title\": \"i Phone-1A\"\r\n}\r\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products/63dc6a1babe4ed51fb4f4e00",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"63dc6a1babe4ed51fb4f4e00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "datadelete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/63dcfdb9bfa0eb3bea0d1bbc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"63dcfdb9bfa0eb3bea0d1bbc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
