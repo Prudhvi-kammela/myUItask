@@ -1,12 +1,6 @@
 const selectedProductIds = [];
 const productsElement = document.getElementById("products");
-const productsModified = products.filter(function(product){
-    product.priceModified = product.price.toFixed(2);
-    product.prePriceModified = product.prePrice.toFixed(2);
-    return product
-    
-})
-renderProductCards(productsModified);
+
 function renderProductCards(products){
     let productCards = "";
     for(let i = 0; i < products.length; i++) {
@@ -27,7 +21,7 @@ function  renderProductCard(product){
      <div class="text-secondary m-1">${product.discount}</div>
      <div class="btn-group w-100" role="group" aria-label="Basic example">
        <button type="button"  class="btn "><i class="bi bi-cart"></i></button>
-       <button type="button"  class="btn  heartBtn"><i class="bi bi-heart"  data-id="${product.id}"></i></button>
+       <button type="button"  class="btn  heartBtn"><i class="bi bi-heart"  data-id="${product._id}"></i></button>
        <button type="button"  class="btn "><i class="bi bi-arrow-left-right"></i></button>
      </div>
    </div>

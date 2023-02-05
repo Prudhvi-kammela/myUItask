@@ -1,3 +1,35 @@
+fetch("http://localhost:3000/products")
+.then(function(res){
+    return res.json()
+})
+.then(function(res){
+    console.log("i am data stored in database",res)
+    const productsModified = res.filter(function(product){
+        product.priceModified = product.price.toFixed(2);
+        product.prePriceModified = product.prePrice.toFixed(2);
+
+        const forSearch = document.querySelector("#search")
+         forSearch.addEventListener("keyup", function() {
+         const term = forSearch.value;
+         const termLowercase = term.toLowerCase();
+        const productFiltered = productsModified.filter(function(product){
+    const titleLower = product.title.toLowerCase();
+    return titleLower.indexOf(termLowercase)!= -1;
+  });
+  renderProductCards(productFiltered);
+})
+        return product
+        
+    })
+    renderProductCards(productsModified);
+})
+.catch(function(err){
+    console.log("i am excuted because there is a error while making a run")
+})
+.finally(function(){
+    console.log("ia am excuted error if request is  suceess or not")
+})
+
 // const products = [
 //     {
 //         id:1,
